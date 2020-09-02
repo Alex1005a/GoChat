@@ -48,14 +48,14 @@ func (r *MessageRepo) CreateMessage(text string) (domain.Message, error) {
 	return mes, nil
 }
 
-func (r *MessageRepo) GetFiveLastMessages() []domain.Message{
+func (r *MessageRepo) GetFiveLastMessages() []domain.Message {
 	var messages []domain.Message
 	options := options.Find()
 
-	//options.SetSort(bson.D{{"createdTime", -1}})
+	options.SetSort(bson.M{"_id": -1})
 
 	options.SetLimit(5)
-	cur, _ := messageCollection.Find(messagectx, bson.D{}, options)
+	cur, _ := messageCollection.Find(messagectx, bson.M{}, options)
 	for cur.Next(context.Background()) {
 
 		var l domain.Message
@@ -63,6 +63,6 @@ func (r *MessageRepo) GetFiveLastMessages() []domain.Message{
 
 		messages = append(messages, l)
 	}
+
 	return messages
 }
-

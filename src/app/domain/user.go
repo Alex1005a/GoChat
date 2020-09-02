@@ -1,9 +1,17 @@
 package domain
 
+import "github.com/dgrijalva/jwt-go"
+
+type Token struct {
+	UserId string
+	jwt.StandardClaims
+}
+
 type User struct {
-	Id      string              `bson:"_id" json:"id,omitempty"`
-	Name   string               `json:"name"`
-	PasswordHash  string        `json:"hash"`
+	Id           string `bson:"_id" json:"id,omitempty"`
+	Name         string `json:"name"`
+	PasswordHash string `json:"hash"`
+	Token        string `json:"token"`
 }
 
 type UserRepo interface {
@@ -14,6 +22,8 @@ type UserRepo interface {
 	UserByUsername(name string) (User, error)
 
 	DeleteUserByID(id string) error
+
+	Login(name, password string) User
 }
 
 type Hasher interface {
