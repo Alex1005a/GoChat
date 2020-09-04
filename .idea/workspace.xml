@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc0dd21-3d90-48c1-a274-89ae5e608fe1" name="Default Changelist" comment="">
+    <list default="true" id="9fc0dd21-3d90-48c1-a274-89ae5e608fe1" name="Default Changelist" comment="Add authentication">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/domain/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domain/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/application/MessageServices.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/application/MessageServices.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domain/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domain/message.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/infrastructure/Repositories/MessageRepo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/infrastructure/Repositories/MessageRepo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/infrastructure/Repositories/UserRepo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/infrastructure/Repositories/UserRepo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/infrastructure/Repositories/UserRepo_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/infrastructure/hasher_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
@@ -96,6 +117,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add authentication" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="131" y="14" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598961367954">
       <screen x="0" y="0" width="1366" height="728" />
@@ -117,38 +154,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="495" y="77" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598964150477" />
-    <state width="1286" height="204" key="GridCell.Tab.0.bottom" timestamp="1599073111750">
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1599247979812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599073111750" />
-    <state width="1286" height="204" key="GridCell.Tab.0.center" timestamp="1599073111749">
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599247979812" />
+    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1599247979812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599073111749" />
-    <state width="1286" height="204" key="GridCell.Tab.0.left" timestamp="1599073111749">
+    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599247979812" />
+    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1599247979812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599073111749" />
-    <state width="1286" height="204" key="GridCell.Tab.0.right" timestamp="1599073111750">
+    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599247979812" />
+    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1599247979812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599073111750" />
-    <state width="1286" height="204" key="GridCell.Tab.1.bottom" timestamp="1599073111750">
+    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599247979812" />
+    <state width="1286" height="204" key="GridCell.Tab.1.bottom" timestamp="1599163787324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599073111750" />
-    <state width="1286" height="204" key="GridCell.Tab.1.center" timestamp="1599073111750">
+    <state width="1286" height="204" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599163787324" />
+    <state width="1286" height="204" key="GridCell.Tab.1.center" timestamp="1599163787324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1599073111750" />
-    <state width="1286" height="204" key="GridCell.Tab.1.left" timestamp="1599073111750">
+    <state width="1286" height="204" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1599163787324" />
+    <state width="1286" height="204" key="GridCell.Tab.1.left" timestamp="1599163787324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1599073111750" />
-    <state width="1286" height="204" key="GridCell.Tab.1.right" timestamp="1599073111750">
+    <state width="1286" height="204" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1599163787324" />
+    <state width="1286" height="204" key="GridCell.Tab.1.right" timestamp="1599163787324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="204" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1599073111750" />
+    <state width="1286" height="204" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1599163787324" />
     <state x="481" y="76" key="RollbackChangesDialog" timestamp="1599059885806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -157,6 +194,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="178" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599058165128" />
+    <state x="269" y="109" key="Vcs.Push.Dialog.v2" timestamp="1599073718967">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="269" y="109" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599073718967" />
     <state x="340" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598938642089">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

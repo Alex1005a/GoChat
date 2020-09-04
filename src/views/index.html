@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>WebSocket demo</title>
+</head>
+<body>
+
+    <div id="container"></div>
+	
+	<form id="formoid" title="login" method="post">
+  <div>
+    <label class="title">Text message</label>
+    <input type="text" id="message" name="message">
+  </div>
+  <div>
+  <div>
+    <input type="submit" id="submitButton" name="submitButton" value="Submit">
+  </div>
+</form>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+		    $.ajax({
+                data: JSON.stringify({ name: $('#name').val(), pass: $('#password').val() }),
+                dataType: 'json',
+                type: 'GET',
+                url: 'http://localhost:8080/messages',
+				contentType: "application/json",
+                success: function(data){
+				    data.reverse();
+                    data.forEach(e => 
+					    container.append("<p>" + e.user.name + ":  " + e.message.text + "</p>"));
+
+                },
+                error: function(){
+                    alert("error");
+                }   
+            });
+            var ws;
+
+            if (window.WebSocket === undefined) {
+                $("#container").append("Your browser does not support WebSockets");
+                return;
+            } else {
+                ws = initWS();
+            }
+
+            function initWS() {
+                var socket = new WebSocket("ws://localhost:8080/ws");
+                    container = $("#container")
+                socket.onopen = function() {
+                    container.append("<p>Connection open</p>");
+                };
+                socket.onmessage = function (e) {
+				    var object = JSON.parse(e.data);
+                    container.append("<p>" + object.user.name + ":  " + object.message.text + "</p>");
+                }
+                socket.onclose = function () {
+                    container.append("<p>Connection closed</p>");
+                }
+
+                return socket;
+            }
+			
+			$("#formoid").submit(function(event) {
+		    event.preventDefault();
+			
+		    $.ajax({
+                data: JSON.stringify({ text: $('#message').val() }),
+                dataType: 'json',
+				headers: { 'Authorization': 'Bearer ' + localStorage["token"]},
+                type: 'POST',
+                url: 'http://localhost:8080/',
+				contentType: false,
+                error: function(){
+                    alert("error");
+                }   
+            });
+        });
+        });
+    </script>
+</body>
+</html>

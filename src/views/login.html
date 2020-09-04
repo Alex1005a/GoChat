@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>WebSocket demo</title>
+</head>
+<body>
+
+    <form id="formoid" title="login" method="post">
+  <div>
+    <label class="title">Name</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div>
+    <label class="title">Password</label>
+    <input type="password" id="password" name="password">
+  </div>
+  <div>
+    <input type="submit" id="submitButton" name="submitButton" value="Submit">
+  </div>
+</form>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function () {
+        $("#formoid").submit(function(event) {
+		    event.preventDefault();
+			
+		    $.ajax({
+                data: JSON.stringify({ name: $('#name').val(), pass: $('#password').val() }),
+                dataType: 'json',
+                type: 'POST',
+                url: 'http://localhost:8080/api/user/login',
+				contentType: "application/json",
+                success: function(data){
+                    alert("success login");
+					localStorage["token"] = data.token;
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert(jqXHR.status);
+                }   
+            });
+        });
+    });		
+    </script>
+</body>
+</html>

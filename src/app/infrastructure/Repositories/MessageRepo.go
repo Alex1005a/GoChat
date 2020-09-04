@@ -37,11 +37,12 @@ func NewMessageRepo() domain.MessageRepo {
 	return &MessageRepo{}
 }
 
-func (r *MessageRepo) CreateMessage(text string) (domain.Message, error) {
+func (r *MessageRepo) CreateMessage(text string, userId string) (domain.Message, error) {
 	var mes domain.Message
 	mes.Id = bson.NewObjectId().Hex()
 	mes.Text = text
 	mes.CreatedTime = time.Now()
+	mes.UserId = userId
 
 	messageCollection.InsertOne(messagectx, mes)
 
